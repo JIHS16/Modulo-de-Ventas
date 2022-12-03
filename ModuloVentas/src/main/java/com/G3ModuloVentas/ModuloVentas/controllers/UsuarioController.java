@@ -33,7 +33,7 @@ public class UsuarioController {
 		return usuarioService.findAll();
 	}
 	@GetMapping("/usuarios/{idusuario}")
-	public Usuario show(@PathVariable String idusuario){
+	public Usuario show(@PathVariable  Integer idusuario){
 		return usuarioService.findById(idusuario);
 	}
 	@PostMapping("/usuarios")
@@ -43,7 +43,7 @@ public class UsuarioController {
 	}	
 	@PutMapping("/usuarios/{idusuario}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Usuario update(@RequestBody Usuario datos,@PathVariable String idusuario) {
+	public Usuario update(@RequestBody Usuario datos,@PathVariable Integer idusuario) {
 		Usuario usuarioActual = usuarioService.findById(idusuario);
 		usuarioActual.setIdusuario(datos.getIdusuario());
 		usuarioActual.setIdrol(datos.getIdrol());
@@ -59,7 +59,7 @@ public class UsuarioController {
 	}
 	@DeleteMapping("/usuarios/{idusuario}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable String idusuario) {
+	public void delete(@PathVariable Integer idusuario) {
 		usuarioService.delete(idusuario);
 	}	
 }

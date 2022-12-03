@@ -6,40 +6,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.G3ModuloVentas.ModuloVentas.models.dao.IPersonaDao;
-import com.G3ModuloVentas.ModuloVentas.models.entity.Persona;
+import com.G3ModuloVentas.ModuloVentas.models.dao.IRolDao;
+import com.G3ModuloVentas.ModuloVentas.models.entity.Rol;
+
 
 @Service
-public class PersonaServicelmpl implements IPersonaService {
-	
+public class RolServicelmpl implements IRolService {
+
 	@Autowired
-	private IPersonaDao personaDao;
+	private IRolDao rolDao;
 	@Override
 	@Transactional(readOnly = true)
-	public List<Persona> findAll() {
+	public List<Rol> findAll() {
 		// TODO Auto-generated method stub
-		return (List<Persona>) personaDao.findAll();
+		return (List<Rol>) rolDao.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Persona findById(Integer idpersona) {
+	public Rol findById(Integer idrol) {
 		// TODO Auto-generated method stub
-		return personaDao.findById(idpersona).orElse(null);
+		return rolDao.findById(idrol).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public Persona save(Persona persona) {
+	public Rol save(Rol rol) {
 		// TODO Auto-generated method stub
-		return personaDao.save(persona);
+		return rolDao.save(rol);
 	}
 
 	@Override
 	@Transactional
-	public void delete(Integer idpersona) {
+	public void delete(Integer idrol) {
 		// TODO Auto-generated method stub
-		personaDao.deleteById(idpersona);
+		rolDao.deleteById(idrol);
 
 	}
 

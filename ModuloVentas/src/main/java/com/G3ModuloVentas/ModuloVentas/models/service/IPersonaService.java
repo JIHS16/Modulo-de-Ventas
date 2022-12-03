@@ -8,9 +8,9 @@ import com.G3ModuloVentas.ModuloVentas.models.entity.Persona;
 public interface IPersonaService {
 public List<Persona> findAll(); 
 	
-	public Persona findById(String idpersona);
+	public Persona findById(Integer idpersona);
 	
 	public Persona save(Persona persona);
 	
-	public void delete(String idpersona);
+	public void delete(Integer idpersona);
 }

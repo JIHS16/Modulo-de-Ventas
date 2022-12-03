@@ -22,7 +22,7 @@ public class UsuarioServicelmpl implements IUsuarioService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Usuario findById(String idusuario) {
+	public Usuario findById(Integer idusuario) {
 		// TODO Auto-generated method stub
 		return usuarioDao.findById(idusuario).orElse(null);
 	}
@@ -36,7 +36,7 @@ public class UsuarioServicelmpl implements IUsuarioService {
 
 	@Override
 	@Transactional
-	public void delete(String idusuario) {
+	public void delete(Integer idusuario) {
 		// TODO Auto-generated method stub
 		usuarioDao.deleteById(idusuario);
 

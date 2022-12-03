@@ -8,11 +8,12 @@ import javax.persistence.Table;
 @Table(name="usuarios")
 
 public class Usuario {
+
 	@Id
 	@Column(length=5,nullable = false)
-	private String idusuario;
+	private Integer idusuario;
 	@Column(length=5,nullable = false)
-	private String idrol;
+	private Integer idrol;
 	@Column(length=100,nullable = false)
 	private String nombre;
 	@Column(length=20,nullable = false)
@@ -27,18 +28,19 @@ public class Usuario {
 	private String email;
 	@Column(length=5,nullable = false)
 	private String password;
-	@Column(length=5,nullable = false)
+	@Column(length=20,nullable = false)
 	private String estado;
-	public String getIdusuario() {
+	
+	public Integer getIdusuario() {
 		return idusuario;
 	}
-	public void setIdusuario(String idusuario) {
+	public void setIdusuario(Integer idusuario) {
 		this.idusuario = idusuario;
 	}
-	public String getIdrol() {
+	public Integer getIdrol() {
 		return idrol;
 	}
-	public void setIdrol(String idrol) {
+	public void setIdrol(Integer idrol) {
 		this.idrol = idrol;
 	}
 	public String getNombre() {

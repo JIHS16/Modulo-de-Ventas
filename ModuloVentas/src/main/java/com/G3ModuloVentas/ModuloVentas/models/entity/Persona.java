@@ -8,9 +8,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name="personas")
 public class Persona {
+
 	@Id
 	@Column(length=5,nullable = false)
-	private String idpersona;
+	private Integer idpersona;
 	@Column(length=20,nullable = false)
 	private String tipopersona;
 	@Column(length=100,nullable = false)
@@ -25,10 +26,11 @@ public class Persona {
 	private String telefono;
 	@Column(length=50,nullable = false)
 	private String email;
-	public String getIdpersona() {
+	
+	public Integer getIdpersona() {
 		return idpersona;
 	}
-	public void setIdpersona(String idpersona) {
+	public void setIdpersona(Integer idpersona) {
 		this.idpersona = idpersona;
 	}
 	public String getTipopersona() {

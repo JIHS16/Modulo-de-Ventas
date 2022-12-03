@@ -3,9 +3,9 @@ package com.G3ModuloVentas.ModuloVentas.models.dao;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.G3ModuloVentas.ModuloVentas.models.entity.Usuario;
+import com.G3ModuloVentas.ModuloVentas.models.entity.Rol;
 
 @Repository
-public interface IUsuarioDao extends CrudRepository<Usuario,Integer>{
+public interface IRolDao extends CrudRepository<Rol,Integer> {
 
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.G3ModuloVentas.ModuloVentas.models.entity.Persona;
 
 @Repository
-public interface IPersonaDao extends CrudRepository<Persona,String> {
+public interface IPersonaDao extends CrudRepository<Persona,Integer> {
 
 }

@@ -32,7 +32,7 @@ public class PersonaController {
 		return personaService.findAll();
 	}
 	@GetMapping("/personas/{idpersona}")
-	public Persona show(@PathVariable String idpersona){
+	public Persona show(@PathVariable Integer idpersona){
 		return personaService.findById(idpersona);
 	}
 	@PostMapping("/personas")
@@ -42,7 +42,7 @@ public class PersonaController {
 	}	
 	@PutMapping("/personas/{idpersona}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Persona update(@RequestBody Persona datos,@PathVariable String idpersona) {
+	public Persona update(@RequestBody Persona datos,@PathVariable Integer idpersona) {
 		Persona personaActual = personaService.findById(idpersona);
 		personaActual.setTipopersona(datos.getTipopersona());
 		personaActual.setNombre(datos.getNombre());
@@ -55,7 +55,7 @@ public class PersonaController {
 	}
 	@DeleteMapping("/personas/{idpersona}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable String idpersona) {
+	public void delete(@PathVariable Integer idpersona) {
 		personaService.delete(idpersona);
 	}	
 
